@@ -1,7 +1,7 @@
-#!/bin/echo Error. Aborting. Instead of running this script, please use: source
+#!/bin/bash
 
 #
-# Copyright (C) 2020 Christoph Sommer <sommer@ccs-labs.org>
+# Copyright (C) 2020 Christoph Sommer <sommer@cms-labs.org>
 #
 # Documentation for these modules is at http://veins.car2x.org/
 #
@@ -22,14 +22,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# Check if called from Veins directory
-test -f print-veins-version >/dev/null 2>&1
-if [ "$?" -ne 0 ]; then
-	echo 'Error: current working directory does not look like a Veins root directory. Aborting.' >&2
-	return 1
-fi
+echo "WARNING: the format-code.sh script is deprecated in favor of bin/veins_format_code. Redirecting." >&2
+echo "WARNING: the format-code.sh script is deprecated in favor of bin/veins_format_code. Redirecting."
 
-# Add Veins directory to PATH
-VEINS_ROOT="$(pwd)"
-export PATH="$PATH":"$VEINS_ROOT/bin"
+$(dirname "$0")/bin/veins_format_code "$@"
+
+echo "WARNING: the format-code.sh script is deprecated in favor of bin/veins_format_code. Redirection done." >&2
+echo "WARNING: the format-code.sh script is deprecated in favor of bin/veins_format_code. Redirection done."
 

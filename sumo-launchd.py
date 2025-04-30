@@ -1,7 +1,7 @@
-#!/bin/echo Error. Aborting. Instead of running this script, please use: source
+#!/usr/bin/env python3
 
 #
-# Copyright (C) 2020 Christoph Sommer <sommer@ccs-labs.org>
+# Copyright (C) 2020 Christoph Sommer <sommer@cms-labs.org>
 #
 # Documentation for these modules is at http://veins.car2x.org/
 #
@@ -22,14 +22,18 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# Check if called from Veins directory
-test -f print-veins-version >/dev/null 2>&1
-if [ "$?" -ne 0 ]; then
-	echo 'Error: current working directory does not look like a Veins root directory. Aborting.' >&2
-	return 1
-fi
+import os
+import sys
 
-# Add Veins directory to PATH
-VEINS_ROOT="$(pwd)"
-export PATH="$PATH":"$VEINS_ROOT/bin"
+try:
+    sys.stderr.write('WARNING: the sumo-launchd.py script is deprecated in favor of bin/veins_launchd. Redirecting.\n')
+    sys.stderr.flush()
+    sys.stdout.write('WARNING: the sumo-launchd.py script is deprecated in favor of bin/veins_launchd. Redirecting.\n')
+    sys.stdout.flush()
+    exec(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'bin/veins_launchd')).read())
+finally:
+    sys.stderr.write('WARNING: the sumo-launchd.py script is deprecated in favor of bin/veins_launchd. Redirection done.\n')
+    sys.stderr.flush()
+    sys.stdout.write('WARNING: the sumo-launchd.py script is deprecated in favor of bin/veins_launchd. Redirection done.\n')
+    sys.stdout.flush()
 
