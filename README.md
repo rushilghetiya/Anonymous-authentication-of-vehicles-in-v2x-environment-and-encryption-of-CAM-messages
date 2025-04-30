@@ -38,10 +38,8 @@ With the rapid development of V2X communication, it's crucial to preserve driver
 - Anirudh Bansal – RA2211003011208  
 - Adittya Sengupta – RA2211003011215  
 - Rushil Ghetiya – RA2211003011217  
+under the guidance -  Dr. Pavithra Guru
 
-## 📄 License
-
-You are free to modify and use the code under the [MIT License](LICENSE) *(if you choose to add one)*.
 
 Implementation plan:
 --------------------------------
